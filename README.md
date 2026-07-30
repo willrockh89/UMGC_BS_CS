@@ -53,7 +53,7 @@
 
 * **Academic Excellence:** Successfully completed all program requirements graduating Cum Laude with a 3.8 GPA.
 * **Practical Labs:** Applied theoretical principles across enterprise network design, threat analysis, and automated system hardening.
-* **Integrated Skillset:** Direct alignment between academic coursework and foundational industry certifications (CompTIA Security+ ce, Network+ ce, A+ ce, CSIS, CIOS).
+* **Integrated Skillset:** Direct alignment between academic coursework and foundational industry certifications (CompTIA CYSA+, CLoud+, Linux+, Security+ ce, Network+ ce, A+ ce, EC-CEH).
 
 ---
 
