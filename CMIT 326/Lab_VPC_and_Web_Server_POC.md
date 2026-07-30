@@ -63,20 +63,16 @@ service httpd start
 ---
 
 ### Phase 4: Verification & Web Application Tessting
-1. Verified instaances status (2/2 checks passed) and public IP assignment (3.89.125.165).
+1. Verified instaances status (2/2 checks passed) and public IP assignment `<PUBLIC_IP>`.
 2. Navigated to public IP in browser to confirm web application startup, displaying metadata for instance 'i-0482e6923b86bf04d' located in 'us-east-1b' with active PHP processing.
 
 ---
 
 ### Key Findings
 * **VPC ID:** 'vpc-0563eebaf2966e862' ('10.0.0.0/16')
-
 * **Security Group ID:** 'sg-0c9cfbc36ade932fd' ('Web Security Group')
-
-* **EC2 Instance ID:** 'i-0482e6923b86bf04d' ('Web Server 1', '3.89.125.165' / Private '10.0.2.199')
-
-* **Federated User ID:** 'voclabs/user2914574=willrock_herrera'
-
+* **EC2 Instance ID:** 'i-0482e6923b86bf04d' ('Web Server 1', '`<PUBLIC_IP>`' / Private '10.0.2.199')
+* **Federated User ID:** '<FEDERATED_USER_ID>'
 * **Deployment Validation:** Apache and PHP app deployed and served successfully via automated User Data boot script.
 
 ---
