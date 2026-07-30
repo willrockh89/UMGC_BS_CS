@@ -33,7 +33,7 @@
 2. Attached `My Volume` (`vol-00c674d45f34d96e9`) to the target EC2 Linux instance (`i-0aabf446cf0200304`) as device `/dev/sdf`[cite: 3].
 
 ### Phase 2: Remote Connection & File System Configuration
-1. Established an SSH session to the Amazon Linux 2023 instance (`ec2-user@ip-10-1-11-236`) using OpenSSH public key authentication[cite: 3].
+1. Established an SSH session to the Amazon Linux 2023 instance (`ec2-user@<PRIVATE_IP>`) using OpenSSH public key authentication[cite: 3].
 2. Formatted the unformatted block storage device `/dev/sdf` with an `ext3` file system using `mkfs.ext3`[cite: 3].
 3. Created directory `/mnt/data-store` and mounted `/dev/sdf` using `sudo mount /dev/sdf /mnt/data-store`[cite: 3].
 4. Configured persistent mounting by appending `/dev/sdf /mnt/data-store ext3 defaults,noatime 1 2` to `/etc/fstab` using `tee`[cite: 3].
