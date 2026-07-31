@@ -5,7 +5,7 @@
 ---
 * **Platform:** UMGC / Academic Lab
 * **Category:** Blue Team / Compliance & Security Governance
-* **Room:** CMIT Project 3 - HIPAA Basic Training
+* **Project:** HIPAA Project
 * **Difficulty:** Medium
 * **Status:** Completed
 ---
