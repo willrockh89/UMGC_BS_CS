@@ -5,7 +5,7 @@
 ## Room Metadata
 * **Platform:** AWS Academy / UMGC
 * **Category:** Cloud Architecture / Infrastructure & System Hardening
-* **Room:** CMIT 326 - Lab 6: Scale and Load Balance Your Architecture
+* **Project:** Lab 6: Scale and Load Balance Your Architecture
 * **Difficulty:** Medium
 * **Status:** Completed
 
