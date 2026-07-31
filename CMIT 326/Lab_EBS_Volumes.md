@@ -5,7 +5,7 @@
 ## Room Metadata
 * **Platform:** AWS Academy / UMGC
 * **Category:** Cloud Storage / Data Integrity & System Administration
-* **Project:** Lab - Working with EBS
+* **Project:** Lab: Working with EBS
 * **Difficulty:** Medium
 * **Status:** Completed
 
