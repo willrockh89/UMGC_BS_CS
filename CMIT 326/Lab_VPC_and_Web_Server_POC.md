@@ -5,7 +5,7 @@
 ## Room Metadata
 * **Platform:** AWS Academy / UMGC
 * **Category:** Blue Team / Cloud Infrastructure & System Architecture
-* **Room:** CMIT 326 - Proof-of-Concept VPC & Web Server
+* **Project:** Proof-of-Concept VPC & Web Server
 * **Difficulty:** Medium
 * **Status:** Completed
 
