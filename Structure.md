@@ -14,8 +14,8 @@ UMGC_BS_CS/
 │   ├── [[packet-analysis]]/
 │   └── [[threat-management]]/
 ├── [cloud-infrastructure/](./cloud-infrastructure/)
-│   ├── [aws-iam-access-control/](./aws-iam-access-control/) 
-│       ├── [README.md](./README.md/)
+│   ├── [aws-iam-access-control/](./cloud-infrastructure/aws-iam-access-control/) 
+│       ├── [README.md](./cloud-infrastructure/aws-iam-access-control/README.md/)
 │   └── [[aws-cloud-deployments]]/
 ├── [[foundations]]/
 │   ├── [[enterprise-networking]]/
