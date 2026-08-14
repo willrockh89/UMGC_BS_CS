@@ -1,5 +1,5 @@
 UMGC_BS_CS/
-├── [[README.md]]
+├── [README.md](./README.md)
 ├── [[capstone]]/
 │   └── [[enterprise-cybersecurity-solution]]/
 │       ├── [[README.md]]
