@@ -29,5 +29,6 @@ This repository contains technical documentation, network captures, threat model
 Offensive Security    : Reconnaissance, Network Exploitation, Vulnerability Scanning
 Defensive Operations  : Packet Capture Analysis, Incident Response, Log Auditing
 Cloud & Networking    : AWS VPC/EC2 Management, Subnetting, VLAN Routing, Firewalls
+```
 Systems & Tooling     : Linux CLI, PowerShell, Wireshark, Nmap, Nessus, Git
 Frameworks & Standards: NIST CSF, OWASP Top 10, MITRE ATT&CK
