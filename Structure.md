@@ -13,7 +13,9 @@ UMGC_BS_CS/
 │   ├── [[vulnerability-assessments]]/
 │   ├── [[packet-analysis]]/
 │   └── [[threat-management]]/
-├── [[cloud-infrastructure]]/
+├── [cloud-infrastructure/](./cloud-infrastructure/)
+│   ├── [aws-iam-access-control/](./aws-iam-access-control/) 
+│       ├── [README.md](./README.md/)
 │   └── [[aws-cloud-deployments]]/
 ├── [[foundations]]/
 │   ├── [[enterprise-networking]]/
