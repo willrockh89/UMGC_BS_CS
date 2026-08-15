@@ -141,3 +141,156 @@ Screenshots document user assignments, authorization testing, and successful EC2
 ---
 
 ## Security Concepts Demonstrated
+Project completion was validated through multiple authorization tests performed using separate IAM user accounts.
+
+### IAM Group Membership Validation
+
+Verified successful assignment of users to their respective IAM groups:
+
+- EC2-Admin
+- EC2-Support
+- S3-Support
+
+Group membership ensured permissions were inherited through role assignments rather than direct user permissions.
+
+### Access Boundary Validation
+
+Authenticated as each IAM user and verified authorization behavior against assigned permissions.
+
+#### user-1 (S3-Support)
+
+Successfully:
+
+- Accessed Amazon S3 resources
+- Viewed available buckets
+
+Denied:
+
+- Amazon EC2 access
+
+Result:
+
+The account operated strictly within its assigned permission scope.
+
+#### user-2 (EC2-Support)
+
+Successfully:
+
+- Accessed Amazon EC2
+- Viewed existing instances
+
+Denied:
+
+- EC2 instance state changes
+- Amazon S3 access
+
+Result:
+
+The account maintained read-only visibility while preventing administrative actions.
+
+#### user-3 (EC2-Admin)
+
+Successfully:
+
+- Accessed EC2 resources
+- Executed instance stop operations
+- Changed instance state
+
+Result:
+
+Administrative permissions functioned as expected without authorization errors.
+
+Screenshots were captured throughout the testing process, including user assignments, authorization denials, and successful administrative actions. 【1-ca6691】【2-d80243】
+
+---
+
+## Security Concepts Demonstrated
+
+### Identity and Access Management (IAM)
+
+Implemented user access controls through centralized identity administration using AWS IAM users, groups, and policies. 【1-ca6691】
+
+### Role-Based Access Control (RBAC)
+
+Permissions were assigned to groups representing organizational job functions, allowing users to inherit appropriate privileges based on their responsibilities. 【1-ca6691】
+
+### Principle of Least Privilege (PoLP)
+
+Accounts received only the permissions required to perform their assigned duties. Access outside of those responsibilities was restricted through policy enforcement. 【1-ca6691】
+
+### Authorization Controls
+
+User activities were tested to ensure IAM policies permitted approved actions while preventing unauthorized operations. 【1-ca6691】
+
+### Access Governance
+
+Permission administration was centralized through group-based assignments, improving consistency and reducing the risk of individual permission sprawl. 【1-ca6691】
+
+---
+
+## Key Takeaways
+
+- Implemented role-based access controls using AWS IAM groups and policies.
+- Evaluated AWS managed policies and customer-defined inline policies.
+- Validated authorization boundaries through direct user testing.
+- Applied least-privilege principles to cloud resource access.
+- Gained practical experience with cloud identity administration.
+- Developed foundational IAM skills directly applicable to identity governance and access management environments.
+
+---
+
+## Artifacts
+
+Suggested artifact structure:
+
+```text
+artifacts/
+├── iam-user-review.png
+├── iam-group-membership.png
+├── s3-support-access-test.png
+├── ec2-support-readonly-validation.png
+├── access-denied-ec2-stop.png
+├── ec2-admin-instance-stop-success.png
+├── authorization-testing-summary.png
+└── CMIT_326_Intro_AWS_IAM.pdf
+```
+
+---
+
+## IAM and GRC Relevance
+
+### IAM Analyst
+
+This project demonstrates:
+
+- User administration
+- Group administration
+- Access provisioning
+- Permission inheritance
+- Role assignment
+- Authorization validation
+- Access governance concepts
+
+### GRC Analyst
+
+This project demonstrates:
+
+- Least privilege implementation
+- Policy-based access control
+- Security control validation
+- Identity governance concepts
+- Access review processes
+- Compliance-oriented permission management
+
+---
+
+## Repository Structure
+
+```text
+cloud-infrastructure/
+└── aws-iam-access-control/
+    ├── README.md
+    └── artifacts/
+        ├── CMIT_326_Intro_AWS_IAM.pdf
+        └── Intro_to_AWS_IAM.docx
+```
