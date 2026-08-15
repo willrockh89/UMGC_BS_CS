@@ -184,13 +184,10 @@ Promoting administrative, physical, and technical safeguards that reduce the lik
 
 ## Career Relevance
 
-This project demonstrates knowledge applicable to:
-
 - GRC Analyst
-- Security Awareness Analyst
 - Compliance Analyst
+- Privacy Analyst
+- Information Governance Analyst
 - Risk Analyst
-- Healthcare Security Analyst
-- Information Security Analyst
 
 While not a hands-on technical implementation project, it demonstrates the ability to interpret regulatory requirements, communicate security concepts, and support compliance-focused security programs.
