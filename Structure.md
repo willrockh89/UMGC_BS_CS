@@ -17,6 +17,20 @@ UMGC_BS_CS/
 │   ├── [aws-iam-access-control/](./cloud-infrastructure/aws-iam-access-control/) 
 │       ├── [README.md](./cloud-infrastructure/aws-iam-access-control/README.md/)
 │   └── [[aws-cloud-deployments]]/
+├── [grc](./grc)/ 
+│   └── [hipaa-security-awareness-training](./grc/hipaa-security-awareness-training/)/ 
+│       ├── [README.md](./grc/hipaa-security-awareness-training/README.md/)
+│       ├── [artifacts/](./grc/hipaa-security-awareness-training/artifacts/)  # Source files & output artifacts
+│       │   ├── [HIPAA-Project-Notes.docx](./grc/hipaa-security-awareness-training/artifacts/HIPAA-Projects-Notes.docx)
+│       │   └── [CMIT-320-Presentation.pptx](./grc/hipaa-security-awareness-training/artifacts/CMIT-320-Presentation.pptx)
+│       ├── screenshots/ 
+│       │   ├── slide-1.png
+│       │   ├── slide-2.png
+│       │   ├── slide-3.png
+│       │   ├── slide-4.png
+│       │   └── slide-7.png
+│       └── references/                          
+│           └── source-links.md
 ├── [[foundations]]/
 │   ├── [[enterprise-networking]]/
 │   ├── [[linux-system-administration]]/
