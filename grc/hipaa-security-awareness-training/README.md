@@ -170,6 +170,9 @@ Promoting administrative, physical, and technical safeguards that reduce the lik
 
 ## Key Takeaways
 
+- Interpreted regulatory requirements and translated them into employee training material.
+- Improved understanding of compliance-driven security controls.
+- Demonstrated ability to communicate complex regulatory requirements to non-technical audiences. 
 - Developed familiarity with HIPAA regulatory requirements.
 - Strengthened understanding of healthcare privacy and security obligations.
 - Evaluated the differences between PII, PHI, and ePHI.
