@@ -1,74 +1,143 @@
-# AWS IAM Access Control & RBAC Implementation
+# AWS IAM Access Control and Role-Based Authorization
 
-## Project Overview
+## Overview
 
-This project focused on designing and implementing AWS Identity and Access Management (IAM) controls using custom user groups, managed policies, and inline policies. Access was structured around organizational job functions and validated through multi-user authorization testing to enforce the Principle of Least Privilege (PoLP) and prevent unauthorized privilege escalation.
+This project focused on implementing and validating access controls within Amazon Web Services (AWS) using AWS Identity and Access Management (IAM). User permissions were assigned through IAM groups and policies to support role-based access requirements across Amazon S3 and Amazon EC2 resources.
+
+The implementation demonstrated how managed policies and inline policies can be used to enforce authorization boundaries, apply the Principle of Least Privilege (PoLP), and support scalable identity administration.
 
 ---
 
 ## Technologies Used
 
-* **Cloud Provider:** Amazon Web Services (AWS)
-* **Core Services:** AWS IAM, Amazon EC2, Amazon S3
-* **Management Tools:** AWS Management Console, IAM Policy Simulator
-* **Security Controls:** Role-Based Access Control (RBAC), JSON Policy Definition, Explicit Deny Enforcement
+- Amazon Web Services (AWS)
+- AWS Identity and Access Management (IAM)
+- Amazon EC2
+- Amazon S3
+- AWS Managed Policies
+- IAM Inline Policies
+- AWS Management Console
 
 ---
 
-## Skills & Concepts Demonstrated
+## Skills Demonstrated
 
-* **Identity & Access Management (IAM):** User, group, and policy lifecycle administration.
-* **Role-Based Access Control (RBAC):** Group-based entitlement mapping to prevent permission drift.
-* **Principle of Least Privilege (PoLP):** Restricting service access strictly to required job duties.
-* **Authorization Troubleshooting:** Diagnosing implicit vs. explicit denials across EC2 and S3 resources.
-* **Security Policy Engineering:** Evaluating AWS Managed Policies vs. Customer Inline Policies.
-
----
-
-## Architecture & Access Control Model
-
-Permissions were assigned strictly via **IAM User Groups** rather than direct user attachment, ensuring scalable governance across the organization.
-
-| IAM User | Assigned Group | Attached Policy | Policy Type | Effective Authorization |
-| :--- | :--- | :--- | :--- | :--- |
-| `user-1` | **S3-Support** | `AmazonS3ReadOnlyAccess` | AWS Managed | Read-only access to S3 buckets and objects. |
-| `user-2` | **EC2-Support** | `AmazonEC2ReadOnlyAccess` | AWS Managed | Read-only visibility into EC2, CloudWatch, and Auto Scaling. |
-| `user-3` | **EC2-Admin** | `EC2-Admin-Policy` | Customer Inline | Read, Start, and Stop access for EC2 compute instances. |
+- Identity and Access Management (IAM)
+- Role-Based Access Control (RBAC)
+- Principle of Least Privilege (PoLP)
+- Authorization Validation
+- Access Governance
+- Policy Review and Analysis
+- User and Group Administration
+- Cloud Security Fundamentals
 
 ---
 
-## Execution & Authorization Validation
+## Environment
 
-### 1. Environment & Group Setup
-* Audited existing IAM principals to ensure zero unassigned or direct permission attachments.
-* Provisioned functional groups (`S3-Support`, `EC2-Support`, `EC2-Admin`) and mapped specific managed and inline JSON policies.
-* Assigned identities to their respective functional groups to establish baseline RBAC boundaries.
+The project was performed within an AWS cloud environment containing preconfigured IAM users, IAM groups, Amazon EC2 resources, and Amazon S3 resources.
 
-### 2. Authorization Boundary Testing
-To verify least-privilege boundaries, active session testing was conducted across isolated user contexts:
+Three business roles were modeled using IAM groups:
 
-* **S3 Specialist Validation (`user-1`):** Verified successful read access to S3 buckets. Attempted EC2 console navigation; received explicit authorization failure (`You are not authorized to perform this operation`).
-* **EC2 Support Validation (`user-2`):** Confirmed full read/describe visibility across active EC2 instances (`Bastion Host`, `LabHost`). Executed an instance `Stop` command; action was blocked by an authorization denial. Confirmed zero access to S3 storage resources.
-* **EC2 Administrator Validation (`user-3`):** Authenticated as `user-3` and issued a lifecycle state change against `LabHost` (`i-07b9291f565c4ec8b`). The `Stop Instance` API call executed successfully, transitioning the instance state to `Stopping`.
+| Role | Group | Access Level |
+|--------|--------|--------|
+| S3 Support | S3-Support | Read-only access to Amazon S3 |
+| EC2 Support | EC2-Support | Read-only access to Amazon EC2 |
+| EC2 Administrator | EC2-Admin | View, start, and stop EC2 instances |
 
----
-
-## Security Outcomes
-
-* **Zero Direct Policy Attachment:** Standardized identity governance strictly through group inheritance, simplifying future access audits.
-* **Implicit Deny Enforcement:** Verified that unassigned service domains (e.g., `user-1` attempting EC2 calls or `user-2` attempting S3 calls) defaulted to secure denial states.
-* **Managed vs. Inline Boundary Control:** Utilized AWS Managed Policies for standardized read-only tiers while leveraging Customer Inline Policies to bound administrative compute privileges.
+Users were assigned to groups based on job responsibilities and inherited permissions through policy attachments. 【1-8b359b】
 
 ---
 
-## Repository Structure
+## Technical Implementation
 
-```text
-cloud-infrastructure/
-└── aws-iam-access-control/
-    ├── README.md
-    ├── assets/
-    │   └── ec2-stop-instance-success.png
-    └── documentation/
-        ├── Technical_Overview.pdf
-        └── Policy_Definitions.json
+### IAM Policy Review
+
+Reviewed multiple IAM permission models including AWS managed policies and customer-defined inline policies.
+
+Policies examined included:
+
+- AmazonS3ReadOnlyAccess
+- AmazonEC2ReadOnlyAccess
+- EC2-Admin-Policy
+
+The review focused on understanding how actions, resources, and permission scopes are defined within IAM policies. 【1-8b359b】
+
+### Role-Based Access Control
+
+User accounts were assigned to IAM groups that reflected organizational responsibilities.
+
+Assignments included:
+
+| User | Group |
+|--------|--------|
+| user-1 | S3-Support |
+| user-2 | EC2-Support |
+| user-3 | EC2-Admin |
+
+This approach centralized permission management and reduced the need to assign permissions directly to individual users. 【1-8b359b】
+
+### Authorization Testing
+
+Access validation was performed by authenticating as multiple users and verifying their effective permissions.
+
+#### S3 Support Validation
+
+Verified:
+
+- Successful access to Amazon S3 resources
+- Denied access to Amazon EC2 resources
+
+The user was able to browse S3 resources but was unable to perform EC2 actions due to insufficient permissions. 【1-8b359b】
+
+#### EC2 Support Validation
+
+Verified:
+
+- Successful visibility into EC2 resources
+- Inability to modify EC2 instances
+- Denied access to S3 resources
+
+The user was able to view EC2 instances but received authorization errors when attempting administrative actions. 【1-8b359b】
+
+#### EC2 Administrator Validation
+
+Verified:
+
+- Successful access to EC2 resources
+- Ability to stop EC2 instances
+- Administrative control over instance state
+
+The EC2 administrator successfully executed an instance stop action against the LabHost system, demonstrating elevated privileges granted through the assigned IAM policy. 【1-8b359b】【2-314b3a】
+
+---
+
+## Validation
+
+Project completion was validated through:
+
+### IAM Group Membership Verification
+
+Confirmed user membership within:
+
+- EC2-Admin
+- EC2-Support
+- S3-Support
+
+### Authorization Boundary Testing
+
+Validated that:
+
+- Users could access authorized resources
+- Users were restricted from unauthorized actions
+- Policy enforcement occurred as expected
+
+### Administrative Action Execution
+
+Verified successful EC2 instance lifecycle management by an authorized administrative account.
+
+Screenshots document user assignments, authorization testing, and successful EC2 administrative actions. 【2-314b3a】【1-8b359b】
+
+---
+
+## Security Concepts Demonstrated
