@@ -22,6 +22,9 @@ The project was developed around a migration scenario in which an organization t
 
 ## Skills Demonstrated
 
+- Endpoint Administration
+- Workstation Provisioning
+- Operating System Deployment
 - Linux System Administration
 - Virtual Machine Deployment
 - Ubuntu Workstation Configuration
@@ -33,6 +36,15 @@ The project was developed around a migration scenario in which an organization t
 - Secure Data Sanitization
 - Technical Documentation Development
 - End User Onboarding Documentation
+
+---
+
+## Career Relevance
+
+- Endpoint Administrator
+- IT Asset Management Analyst
+- IT Support Specialist
+- Systems Administrator
 
 ---
 
