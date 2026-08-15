@@ -21,7 +21,7 @@ UMGC_BS_CS/
 │   └── [hipaa-security-awareness-training](./grc/hipaa-security-awareness-training/)/ 
 │       ├── [README.md](./grc/hipaa-security-awareness-training/README.md/)
 │       ├── [artifacts/](./grc/hipaa-security-awareness-training/artifacts/)  # Source files & output artifacts
-│       │   ├── [HIPAA-Project-Notes.docx](./grc/hipaa-security-awareness-training/artifacts/HIPAA-Projects-Notes.docx)
+│       │   ├── [HIPAA-Project.docx](./grc/hipaa-security-awareness-training/artifacts/HIPAA-Project.docx)
 │       │   └── [CMIT-320-Presentation.pptx](./grc/hipaa-security-awareness-training/artifacts/CMIT-320-Presentation.pptx)
 │       ├── screenshots/ 
 │       │   ├── slide-1.png
