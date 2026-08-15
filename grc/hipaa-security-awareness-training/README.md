@@ -51,7 +51,6 @@ Developed as part of coursework for UMGC (CMIT 320), the project translates comp
 
 
 ```
-
 +------------------------------------------------------------------+
 |                       Data Release Request                       |
 +------------------------------------------------------------------+
@@ -65,7 +64,6 @@ YES                      NO
 YES            NO
 
 [Apply Minimum Necessary]  [DENY RELEASE]  [Permissible Release]
-
 ```
 
 
@@ -74,7 +72,3 @@ YES            NO
 * **U.S. Department of Health & Human Services (HHS):** [Summary of the HIPAA Security Rule](https://www.hhs.gov/hipaa/for-professionals/security/index.html)
 * **Electronic Code of Federal Regulations (eCFR):** [Title 45, Subtitle A, Subchapter C, Part 164](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164)
 * **U.S. Department of Labor (DOL):** [Guidance on Protection of Personally Identifiable Information (PII)](https://www.dol.gov/general/ppii)
-
-<FollowUp label="Want to build a reusable prompt template to systematically convert your other UMGC assignments into GitHub repos?" query="Let's build a reusable prompt template to process my past UMGC cybersecurity assignments into standardized, recruiter-ready GitHub portfolio repositories."/>
-
-```
